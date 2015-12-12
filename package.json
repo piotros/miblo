@@ -1,13 +1,22 @@
 {
   "name": "miblo",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "description": "Simple microblogging app",
+  "author": "Piotr 'piotros' Baran",
   "license": "ISC",
+  "homepage": "https://github.com/piotros/miblo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piotros/miblo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/piotros/miblo/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && webpack --progress",
+    "clean": "rm -rf www/*"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "html-webpack-plugin": "^1.7.0",
