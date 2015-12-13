@@ -22,5 +22,10 @@ module.exports = {
                 collapseWhitespace: true
             }
         })
-    ]
+    ],
+    vue    : {
+        preLoaders: {
+            js: 'babel-eslint'
+        }
+    }
 };
