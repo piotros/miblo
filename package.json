@@ -14,8 +14,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clean && webpack --progress",
-    "clean": "rm -rf www/*"
+    "build": "npm run clean && webpack --progress --colors",
+    "clean": "rm -rf www/*",
+    "clean-logs": "rm -rf logs/*",
+    "serve": "webpack-dev-server --progress --colors --content-base www/",
+    "watch": "webpack --progress --colors --watch",
+    "analyse": "webpack --json > logs/analyse.json"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
