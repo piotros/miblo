@@ -7,6 +7,11 @@ module.exports = {
         path    : './www',
         filename: 'app.min.js'
     },
+    module : {
+        loaders: [
+            {test: /\.vue$/, loader: 'vue'}
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
