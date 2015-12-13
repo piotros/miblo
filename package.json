@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm install webpack webpack-dev-server --global",
     "build": "npm run clean && webpack -p --progress --colors --dev-tool source-map",
     "clean": "rm -rf www/*",
     "clean-logs": "rm -rf logs/*",
