@@ -14,11 +14,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clean && webpack --progress --colors",
+    "build": "npm run clean && webpack -p --progress --colors --dev-tool source-map",
     "clean": "rm -rf www/*",
     "clean-logs": "rm -rf logs/*",
-    "serve": "webpack-dev-server --progress --colors --content-base www/",
-    "watch": "webpack --progress --colors --watch",
+    "dev": "npm run clean && webpack -d --progress --colors & webpack-dev-server --progress --colors --inline --content-base www/",
     "analyse": "webpack --json > logs/analyse.json"
   },
   "devDependencies": {
