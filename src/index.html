@@ -12,11 +12,9 @@
 </head>
 <body>
 <div id="app">
-    <p>
-        <a v-link="{ path: '/tags' }">Tags</a>
-        <a v-link="{ path: '/bar' }">Bar</a>
-    </p>
+    <navigation></navigation>
     <router-view></router-view>
+    <footer-view></footer-view>
 </div>
 <script src="cordova.js"></script>
 
