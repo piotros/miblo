@@ -1,26 +1,31 @@
-var Vue                 = require('vue');
-var VueRouter           = require('vue-router');
-var TagsComponent       = require('./components/tags/tags.vue');
-var NavigationComponent = require('./components/navigation/navigation.vue');
-var FooterComponent     = require('./components/footer/footer.vue');
+import Vue                 from 'vue'
+import VueRouter           from 'vue-router'
+import LayoutComponent     from 'components/layout/layout.vue'
+import TagsComponent       from 'components/tags/tags.vue'
+import NavigationComponent from 'components/navigation/navigation.vue'
+import FooterComponent     from 'components/footer/footer.vue'
+import EntryComponent      from 'components/entry/entry.vue'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 var App = Vue.extend({
     components: {
         navigation: NavigationComponent,
         footerView: FooterComponent
     }
-});
+})
 
 var router = new VueRouter({
     hashbang: false
-});
+})
 
 router.map({
-    '/tags': {
+    '/tags' : {
         component: TagsComponent
+    },
+    '/entry': {
+        component: EntryComponent
     }
-});
+})
 
-router.start(App, '#app');
+router.start(App, '#app')

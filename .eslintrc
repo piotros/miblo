@@ -1,6 +1,15 @@
 {
   "parser": "babel-eslint",
+  "extends": "eslint:recommended",
   "rules": {
-    "strict": 0
+    "semi": [
+      2,
+      "never"
+    ],
+    "quotes": [
+      2,
+      "single"
+    ],
+    "curly": 2
   }
 }

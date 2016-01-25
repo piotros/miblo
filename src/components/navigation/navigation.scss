@@ -1,3 +1,8 @@
-@import "~foundation-sites/scss/foundation.scss";
+@import "settings";
+@import "~foundation-sites/scss/components/top-bar";
 
-@include foundation-top-bar;
+$topbar-background: red;
+
+.navigation {
+  @include top-bar-container;
+}
