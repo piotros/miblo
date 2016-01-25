@@ -1,0 +1,11 @@
+@import 'settings';
+@import '~foundation-sites/scss/components/callout';
+
+.entry {
+  @include callout;
+
+  h1 {
+    color: red;
+  }
+
+}

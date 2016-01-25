@@ -1,32 +1,14 @@
 <template>
     <article class="entry">
-        <h1>{{title}}</h1>
-
-        <div>{{content}}</div>
+        <h1>{{entry.title}}</h1>
+        <div>{{entry.content}}</div>
     </article>
 </template>
 
-<script type="text/babel">
+<script>
     export default {
-        data(){
-            return {
-                title  : 'Entry title',
-                content: 'Lorem ipsum'
-            }
-        }
+        props: ['entry']
     }
 </script>
 
-<style lang="sass" src="./entry.scss">
-    @import 'settings.scss';
-    @import '~foundation-sites/scss/components/callout';
-
-    .entry {
-    @include callout;
-
-    h1 {
-        color: red;
-    }
-
-    }
-</style>
+<style lang="sass" src="./_entry.scss"></style>
