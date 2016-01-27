@@ -8,4 +8,4 @@
     </nav>
 </template>
 
-<style lang="sass" scoped src="./navigation.scss"></style>
+<style lang="sass" scoped src="./_navigation.scss"></style>
