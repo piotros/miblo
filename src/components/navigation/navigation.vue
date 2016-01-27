@@ -1,10 +1,11 @@
 <template>
     <nav class="navigation">
-        <div class="top-bar-left">
-            <li><a v-link="{ path: '/bar' }">Bar</a></li>
+        <ul class="main-menu">
+            <li><a v-link="{ path: '/entries' }">Entries</a></li>
             <li><a v-link="{ path: '/tags' }">Tags</a></li>
-        </div>
+            <li><a v-link="{ path: '/watched' }">Watched</a></li>
+        </ul>
     </nav>
 </template>
 
-<style lang="sass" src="./navigation.scss"></style>
+<style lang="sass" scoped src="./navigation.scss"></style>

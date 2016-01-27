@@ -1,8 +1,11 @@
 @import "settings";
 @import "~foundation-sites/scss/components/top-bar";
-
-$topbar-background: red;
+@import "~foundation-sites/scss/components/menu";
 
 .navigation {
   @include top-bar-container;
+}
+
+.main-menu {
+  @include menu-base;
 }

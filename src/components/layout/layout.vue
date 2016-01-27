@@ -7,7 +7,11 @@
 </template>
 
 <style lang="sass">
+    @import "settings";
     @import "~foundation-sites/scss/vendor/normalize";
+    @import "~foundation-sites/scss/typography/base";
+
+    @include foundation-typography-base;
 </style>
 
 <script>
