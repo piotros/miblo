@@ -12,6 +12,12 @@
     @import "~foundation-sites/scss/typography/base";
 
     @include foundation-typography-base;
+    @include foundation-global-styles;
+
+    body {
+        background-color: #F7F7F9;
+        padding: 0 200px;
+    }
 </style>
 
 <script>

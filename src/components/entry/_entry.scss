@@ -1,11 +1,18 @@
 @import 'settings';
 @import '~foundation-sites/scss/components/callout';
+@import '~foundation-sites/scss/components/media-object';
+
+$callout-border: none;
 
 .entry {
   @include callout;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
 
-  h1 {
-    color: red;
-  }
+.entry-data {
+  @include media-object-section;
+}
 
+.user-info {
+  @include media-object-section;
 }

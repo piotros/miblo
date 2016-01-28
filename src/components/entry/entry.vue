@@ -1,7 +1,15 @@
 <template>
     <article class="entry">
-        <h1>{{entry.title}}</h1>
-        <div>{{entry.content}}</div>
+        <section class="user-info">
+            <img class="avatar" src="http://placehold.it/80x80">
+        </section>
+        <section class="entry-data">
+            <h4>{{entry.title}}</h4>
+            <div>{{entry.content}}</div>
+            <section class="actions">
+                aaaa
+            </section>
+        </section>
     </article>
 </template>
 
@@ -11,4 +19,4 @@
     }
 </script>
 
-<style lang="sass" src="./_entry.scss"></style>
+<style lang="sass" scoped src="./_entry.scss"></style>

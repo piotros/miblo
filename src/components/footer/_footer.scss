@@ -1,8 +1,6 @@
 @import "settings";
 @import "~foundation-sites/scss/components/top-bar";
 
-$topbar-background: blue;
-
 .footer {
   @include top-bar-container;
 }
