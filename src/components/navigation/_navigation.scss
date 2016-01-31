@@ -6,6 +6,16 @@
   @include top-bar-container;
 }
 
-.main-menu {
+.main-menu, .secondary-menu {
   @include menu-base;
+}
+
+@include breakpoint(medium) {
+  .main-menu {
+    float: left;
+  }
+
+  .secondary-menu {
+    float: right
+  }
 }

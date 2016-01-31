@@ -5,7 +5,16 @@
             <li><a v-link="{ path: '/tags' }">Tags</a></li>
             <li><a v-link="{ path: '/watched' }">Watched</a></li>
         </ul>
+        <ul class="secondary-menu">
+            <li><a @click.prevent="addEntry = true">Add entry</a></li>
+        </ul>
     </nav>
 </template>
+
+<script>
+    export default {
+        props: ['addEntry']
+    }
+</script>
 
 <style lang="sass" scoped src="./_navigation.scss"></style>
