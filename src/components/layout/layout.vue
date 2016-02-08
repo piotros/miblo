@@ -1,6 +1,5 @@
 <template>
     <div class="layout">
-        <i class="icon icon-question"></i>
         <navigation :add-entry.sync="addEntry"></navigation>
         <entry-add :show.sync="addEntry"></entry-add>
         <router-view></router-view>
@@ -14,7 +13,6 @@
     @import "~font-awesome/scss/variables";
     @import "~font-awesome/scss/path";
     @import "~font-awesome/scss/core";
-    @import "~font-awesome/scss/icons";
 
     @include foundation-typography-base;
     @include foundation-global-styles;

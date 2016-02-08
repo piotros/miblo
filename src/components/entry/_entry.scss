@@ -16,3 +16,7 @@ $callout-border: none;
 .user-info {
   @include media-object-section;
 }
+
+@include icon(like, $fa-var-thumbs-up)
+@include icon(share, $fa-var-retweet)
+@include icon(comment, $fa-var-comment)
