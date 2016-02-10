@@ -1,14 +1,17 @@
 @import "~foundation-sites/scss/util/util";
 @import "~foundation-sites/scss/global";
 @import "~font-awesome/scss/variables";
+@import "~font-awesome/scss/mixins";
 
 $fa-font-path: "~font-awesome/fonts";
-$fa-css-prefix: "icon";
 $body-background: #F7F7F9;
 $body-font-color: #525255;
 
 @mixin icon($icon-name, $fa-var-name) {
-  .#{$fa-css-prefix}.#{$icon-name}:before {
-    content: $fa-var-name;
+  .#{$icon-name} {
+    @include fa-icon();
+    &:before {
+      content: $fa-var-name;
+    }
   }
 }

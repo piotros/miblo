@@ -10,12 +10,10 @@
 <style lang="sass">
     @import "settings";
     @import "~foundation-sites/scss/typography/base";
-    @import "~font-awesome/scss/variables";
     @import "~font-awesome/scss/path";
-    @import "~font-awesome/scss/core";
 
-    @include foundation-typography-base;
     @include foundation-global-styles;
+    @include foundation-typography-base;
 
     .layout {
         width: rem-calc(1200);

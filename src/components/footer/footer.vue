@@ -4,4 +4,4 @@
     </footer>
 </template>
 
-<style lang="sass" src="./_footer.scss"></style>
+<style lang="sass" scoped src="./_footer.scss"></style>

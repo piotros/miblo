@@ -7,9 +7,9 @@
             <h4>{{entry.title}}</h4>
             <div>{{entry.content}}</div>
             <section class="actions">
-                <i class="icon like"></i>
-                <i class="icon share"></i>
-                <i class="icon comment"></i>
+                <i class="like"></i>
+                <i class="share"></i>
+                <i class="comment"></i>
             </section>
         </section>
     </article>

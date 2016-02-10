@@ -6,7 +6,7 @@
                     <slot name="header">
                         default header
                     </slot>
-                    <i class="icon close" @click="show = false"></i>
+                    <i class="close" @click="show = false"></i>
                 </div>
                 <div class="modal-body">
                     <slot name="body">
