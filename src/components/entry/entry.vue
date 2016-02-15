@@ -1,5 +1,5 @@
 <template>
-    <article class="entry">
+    <article class="entry" transition="bounce">
         <section class="user-info">
             <img class="avatar" src="http://placehold.it/80x80">
         </section>

@@ -17,6 +17,18 @@ $callout-border: none;
   @include media-object-section;
 }
 
+.bounce-transition {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+}
+
+.bounce-enter, .bounce-leave {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+}
+
 @include icon(like, $fa-var-thumbs-up)
 @include icon(share, $fa-var-retweet)
 @include icon(comment, $fa-var-comment)

@@ -6,6 +6,7 @@
 
 <script>
     import Entry from 'components/entry/entry.vue'
+    import entriesService from 'services/entries.js'
 
     export default {
         components: {
@@ -13,13 +14,11 @@
         },
 
         data() {
-            return {
-                entries: [
-                    {title: 111, content: 222},
-                    {title: 333, content: 444},
-                    {title: 555, content: 666}
-                ]
-            }
+            return entriesService
+        },
+
+        created() {
+//            entriesService.more()
         }
     }
 </script>

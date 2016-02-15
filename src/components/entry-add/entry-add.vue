@@ -11,6 +11,10 @@
                 <div class="modal-body">
                     <slot name="body">
                         default body<br>
+                        <input v-model="entry.title">
+                        <input v-model="entry.content">
+
+                        <button @click="add">add</button>
                     </slot>
                 </div>
                 <div class="modal-footer">
@@ -24,8 +28,30 @@
 </template>
 
 <script>
+    import entriesService from 'services/entries.js'
+
     export default {
-        props: ['show']
+        props: ['show'],
+
+        data: {
+            entry: {
+                title  : '',
+                content: ''
+            }
+        },
+
+        methods: {
+            add() {
+                entriesService.add({
+                    title  : this.entry.title,
+                    content: this.entry.content
+                })
+
+                this.show = false
+
+                this.entry = {}
+            }
+        }
     }
 </script>
 
