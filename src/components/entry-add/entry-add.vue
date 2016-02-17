@@ -11,8 +11,8 @@
                 <div class="modal-body">
                     <slot name="body">
                         default body<br>
-                        <input v-model="title">
-                        <input v-model="content">
+                        <input v-model="entry.title">
+                        <input v-model="entry.content">
 
                         <button @click="add">add</button>
                     </slot>
@@ -28,24 +28,23 @@
 </template>
 
 <script>
-    import entriesService from 'services/entries.js'
+    import store from 'store'
 
     export default {
         props: ['show'],
 
         data() {
             return {
-                title  : '',
-                content: ''
+                entry: {
+                    title  : '',
+                    content: ''
+                }
             }
         },
 
         methods: {
             add() {
-                entriesService.add({
-                    title  : this.title,
-                    content: this.content
-                })
+                store.actions.addEntry(this.entry)
 
                 this.show = false
 

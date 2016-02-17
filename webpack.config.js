@@ -46,6 +46,10 @@ module.exports = {
                 removeComments    : true,
                 collapseWhitespace: true
             }
+        }),
+
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"development"'
         })
     ],
 

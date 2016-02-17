@@ -6,7 +6,7 @@
 
 <script>
     import Entry from 'components/entry/entry.vue'
-    import entriesService from 'services/entries.js'
+    import store from 'store'
 
     export default {
         components: {
@@ -14,11 +14,10 @@
         },
 
         data() {
-            return entriesService
-        },
-
-        created() {
-//            entriesService.more()
+            return {
+                entries: store.state.entries
+            }
         }
+
     }
 </script>
