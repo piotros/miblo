@@ -3,24 +3,19 @@
         <div class="modal-wrapper">
             <div class="modal-container">
                 <div class="modal-header">
-                    <slot name="header">
-                        default header
-                    </slot>
+                    Add entry
                     <i class="close" @click="show = false"></i>
                 </div>
                 <div class="modal-body">
-                    <slot name="body">
-                        default body<br>
-                        <input v-model="entry.title">
-                        <input v-model="entry.content">
-
-                        <button @click="add">add</button>
-                    </slot>
+                    <input v-model="entry.title">
+                    <textarea v-model="entry.content"
+                              maxlength="{{entryMaxLength}}"
+                              @keydown.enter.prevent="add">
+                    </textarea>
                 </div>
                 <div class="modal-footer">
-                    <slot name="footer">
-                        default footer
-                    </slot>
+                    {{availableEntryChars}}
+                    <button @click="add" class="entry-add-button">Add</button>
                 </div>
             </div>
         </div>
@@ -30,15 +25,26 @@
 <script>
     import store from 'store'
 
+    let getEmptyEntry = function () {
+        return {
+            title  : '',
+            content: ''
+        }
+    }
+
     export default {
         props: ['show'],
 
         data() {
             return {
-                entry: {
-                    title  : '',
-                    content: ''
-                }
+                entry         : getEmptyEntry(),
+                entryMaxLength: 160
+            }
+        },
+
+        computed: {
+            availableEntryChars() {
+                return this.entryMaxLength - this.entry.content.length
             }
         },
 
@@ -48,7 +54,7 @@
 
                 this.show = false
 
-                this.entry = {}
+                this.entry = getEmptyEntry()
             }
         }
     }

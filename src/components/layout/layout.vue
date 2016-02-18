@@ -22,6 +22,7 @@
 </style>
 
 <script>
+    import Mousetrap  from 'mousetrap'
     import Navigation from 'components/navigation/navigation.vue'
     import EntryAdd   from 'components/entry-add/entry-add.vue'
     import FooterView from 'components/footer/footer.vue'
@@ -33,10 +34,20 @@
             FooterView
         },
 
-        data: function () {
+        data() {
             return {
                 addEntry: false
             }
+        },
+
+        created() {
+            Mousetrap.bind('a e', function () {
+                this.addEntry = true
+            }.bind(this))
+
+            Mousetrap.bind('esc', function () {
+                this.addEntry = false
+            }.bind(this))
         }
     }
 </script>
