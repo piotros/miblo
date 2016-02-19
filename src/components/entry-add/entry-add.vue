@@ -11,6 +11,7 @@
                     <textarea v-model="entry.content"
                               maxlength="{{entryMaxLength}}"
                               @keydown.enter.prevent="add"
+                              @keydown.esc.prevent="show = false"
                               v-focus="show">
                     </textarea>
                 </div>

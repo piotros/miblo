@@ -43,10 +43,12 @@
         created() {
             Mousetrap.bind('a e', function () {
                 this.addEntry = true
+                return false
             }.bind(this))
 
             Mousetrap.bind('esc', function () {
                 this.addEntry = false
+                return false
             }.bind(this))
         }
     }
