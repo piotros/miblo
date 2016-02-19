@@ -1,10 +1,7 @@
 @import 'settings';
 @import '~foundation-sites/scss/components/button';
 @import '~foundation-sites/scss/components/callout';
-@import '~foundation-sites/scss/forms/text';
-
-$form-spacing: rem-calc(16); // Temporary fix. Waiting for my real fix merged to Zurb Foundation.
-// https://github.com/zurb/foundation-sites/pull/8198
+@import '~foundation-sites/scss/forms/forms';
 
 .modal-mask {
   position: fixed;

@@ -10,7 +10,8 @@
                     <input v-model="entry.title">
                     <textarea v-model="entry.content"
                               maxlength="{{entryMaxLength}}"
-                              @keydown.enter.prevent="add">
+                              @keydown.enter.prevent="add"
+                              v-focus="show">
                     </textarea>
                 </div>
                 <div class="modal-footer">
@@ -23,7 +24,8 @@
 </template>
 
 <script>
-    import store from 'store'
+    import store     from 'store'
+    import { focus } from 'vue-focus'
 
     let getEmptyEntry = function () {
         return {
@@ -34,6 +36,8 @@
 
     export default {
         props: ['show'],
+
+        directives: {focus: focus},
 
         data() {
             return {
