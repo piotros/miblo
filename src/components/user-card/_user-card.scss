@@ -1,0 +1,6 @@
+@import 'settings';
+@import '~foundation-sites/scss/components/callout';
+
+.user-card {
+  @include callout;
+}

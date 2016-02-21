@@ -1,14 +1,14 @@
+import Sandbox                 from 'components/sandbox/sandbox.vue'
 import TagsComponent           from 'components/tags/tags.vue'
-import EntryComponent          from 'components/entry/entry.vue'
 import EntriesListComponent    from 'components/entries-list/entries-list.vue'
 
 var routes = {
-    '/tags': {
-        component: TagsComponent
+    '/sandbox': {
+        component: Sandbox
     },
 
-    '/entry': {
-        component: EntryComponent
+    '/tags': {
+        component: TagsComponent
     },
 
     '/entries': {
