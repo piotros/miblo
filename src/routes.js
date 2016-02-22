@@ -1,6 +1,7 @@
 import Sandbox                 from 'components/sandbox/sandbox.vue'
 import TagsComponent           from 'components/tags/tags.vue'
 import EntriesListComponent    from 'components/entries-list/entries-list.vue'
+import UserProfile             from 'components/user-profile/user-profile.vue'
 
 var routes = {
     '/sandbox': {
@@ -13,6 +14,11 @@ var routes = {
 
     '/entries': {
         component: EntriesListComponent
+    },
+
+    '/user/:nickname': {
+        name     : 'user',
+        component: UserProfile
     }
 }
 

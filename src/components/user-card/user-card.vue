@@ -1,11 +1,26 @@
 <template>
     <section class="user-card">
-        <img class="avatar" src="http://placehold.it/80x80">
-        @{{nickname}}
-        {{name}} {{surname}}
-        Entries: {{entriesCount}}
-        Following: {{following}}
-        Followers: {{followers}}
+        <a v-link="{ name: 'user', params: { nickname: nickname } }">
+            <img class="avatar" src="http://placehold.it/120x120">
+        </a>
+        <section class="stats">
+            <div class="stat">
+                <span class="stat-title">Entries</span>
+                <span class="stat-counter">{{entriesCount}}</span>
+            </div>
+            <div class="stat">
+                <span class="stat-title">Following</span>
+                <span class="stat-counter">{{following}}</span>
+            </div>
+            <div class="stat">
+                <span class="stat-title">Followers</span>
+                <span class="stat-counter">{{followers}}</span>
+            </div>
+        </section>
+        <a v-link="{ name: 'user', params: { nickname: nickname } }" class="personal-info">
+            <div>{{name}} {{surname}}</div>
+            <div>@{{nickname}}</div>
+        </a>
     </section>
 </template>
 

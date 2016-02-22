@@ -1,6 +1,44 @@
 @import 'settings';
-@import '~foundation-sites/scss/components/callout';
+
+$stat-height: 40px;
 
 .user-card {
-  @include callout;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.personal-info {
+  width: 100%;
+}
+
+.stats {
+  flex-grow: 1;
+}
+
+.stat {
+  height: $stat-height;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.stat-title {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.stat-counter {
+  display: flex;
+  align-items: center;
+  background-color: #EFEFEF;
+
+  &:before {
+    @include css-triangle($stat-height / 2, #EFEFEF, 'left');
+    margin-left: -$stat-height / 2;
+    display: inline-block;
+  }
+
 }
