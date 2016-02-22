@@ -1,19 +1,19 @@
 import Sandbox                 from 'components/sandbox/sandbox.vue'
-import TagsComponent           from 'components/tags/tags.vue'
-import EntriesListComponent    from 'components/entries-list/entries-list.vue'
+import Tags                    from 'components/tags/tags.vue'
+import EntriesList             from 'components/entries-list/entries-list.vue'
 import UserProfile             from 'components/user-profile/user-profile.vue'
 
-var routes = {
+const routes = {
     '/sandbox': {
         component: Sandbox
     },
 
     '/tags': {
-        component: TagsComponent
+        component: Tags
     },
 
     '/entries': {
-        component: EntriesListComponent
+        component: EntriesList
     },
 
     '/user/:nickname': {
@@ -22,4 +22,11 @@ var routes = {
     }
 }
 
-export default routes
+const redirects = {
+    '*': '/entries'
+}
+
+export default function (router) {
+    router.map(routes)
+    router.redirect(redirects)
+}
