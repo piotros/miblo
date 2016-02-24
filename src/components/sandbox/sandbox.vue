@@ -1,16 +1,15 @@
 <template>
     <div class="sandbox">
-        <user-card></user-card>
-
+        {{msg}}
     </div>
 </template>
 
 <script>
-    import UserCard from 'components/user-card/user-card.vue'
-
     export default{
-        components: {
-            UserCard
+        data() {
+            return {
+                msg: 'sandbox'
+            }
         }
     }
 </script>

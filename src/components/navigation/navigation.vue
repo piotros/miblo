@@ -6,14 +6,27 @@
             <li><a v-link="{ path: '/watched' }">Watched</a></li>
         </ul>
         <ul class="secondary-menu">
+            <li>
+                <a v-link="{ name: 'user', params: { nickname: currentUser.nickname } }">
+                    {{currentUser.name}} {{currentUser.surname}}
+                </a>
+            </li>
             <li><a @click.prevent="addEntry = true">Add entry</a></li>
         </ul>
     </nav>
 </template>
 
 <script>
+    import store from 'store'
+
     export default {
-        props: ['addEntry']
+        props: ['addEntry'],
+
+        computed: {
+            currentUser() {
+                return store.state.user
+            }
+        }
     }
 </script>
 
