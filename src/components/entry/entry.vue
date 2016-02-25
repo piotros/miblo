@@ -4,20 +4,30 @@
             <img class="avatar" src="http://placehold.it/80x80">
         </section>
         <section class="entry-data">
-            <h4>{{entry.title}}</h4>
+            <a v-link="{ name: 'user', params: { nickname: entry.authorNickname } }">
+                <strong>{{entry.authorName}}</strong> @{{entry.authorNickname}}
+            </a>
             <div>{{entry.content}}</div>
             <section class="actions">
-                <i class="like"></i>
-                <i class="share"></i>
-                <i class="comment"></i>
+                <i class="like" @click="like()"></i> {{entry.likes}}
+                <i class="share"></i> {{entry.shares}}
+                <i class="comment"></i> {{entry.comments}}
             </section>
         </section>
     </article>
 </template>
 
 <script>
+    import store from 'store'
+
     export default {
-        props: ['entry']
+        props: ['entry'],
+
+        methods: {
+            like() {
+                store.actions.likeEntry(this.entry)
+            }
+        }
     }
 </script>
 

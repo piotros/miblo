@@ -7,7 +7,6 @@
                     <i class="close" @click="show = false"></i>
                 </div>
                 <div class="modal-body">
-                    <input v-model="entry.title">
                     <textarea v-model="entry.content"
                               maxlength="{{entryMaxLength}}"
                               @keydown.enter.prevent="add"
@@ -30,7 +29,6 @@
 
     let getEmptyEntry = function () {
         return {
-            title  : '',
             content: ''
         }
     }
