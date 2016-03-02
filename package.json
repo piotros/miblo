@@ -15,7 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm install webpack webpack-dev-server --global",
-    "build": "npm run clean && webpack -p --progress --colors --dev-tool source-map",
+    "build": "npm run clean && webpack -p --progress --colors",
     "clean": "rm -rf www/*",
     "clean-logs": "rm -rf logs/*",
     "dev": "npm run clean && webpack -d --progress --colors & webpack-dev-server --progress --colors --inline --content-base www/",
@@ -50,6 +50,7 @@
     "mousetrap": "^1.5.3",
     "vue": "^1.0.16",
     "vue-focus": "^0.1.1",
+    "vue-resource": "^0.7.0",
     "vue-router": "^0.7.11",
     "vuex": "^0.3.0"
   }

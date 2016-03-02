@@ -7,8 +7,9 @@ module.exports = {
     entry: './src/app.js',
 
     output: {
-        path    : './www',
-        filename: 'app.min.js'
+        path      : './www',
+        filename  : 'app.min.js',
+        publicPath: 'http://localhost:8080/'
     },
 
     module: {
