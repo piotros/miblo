@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import { addEntry }    from 'store/actions'
+    import { addEntry }    from 'vuex/actions'
     import { focus }       from 'vue-focus'
 
     let getEmptyEntry = function () {

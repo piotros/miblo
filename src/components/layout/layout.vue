@@ -22,7 +22,7 @@
 </style>
 
 <script>
-    import store      from 'store'
+    import store      from 'vuex/store'
     import Mousetrap  from 'mousetrap'
     import Navigation from 'components/navigation/navigation.vue'
     import EntryAdd   from 'components/entry-add/entry-add.vue'

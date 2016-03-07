@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import { likeEntry } from 'store/actions'
+    import { likeEntry } from 'vuex/actions'
 
     export default {
         props: ['entry'],
