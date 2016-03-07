@@ -24,8 +24,8 @@
 </template>
 
 <script>
-    import store     from 'store'
-    import { focus } from 'vue-focus'
+    import { addEntry }    from 'store/actions'
+    import { focus }       from 'vue-focus'
 
     let getEmptyEntry = function () {
         return {
@@ -36,7 +36,15 @@
     export default {
         props: ['show'],
 
-        directives: {focus: focus},
+        directives: {
+            focus
+        },
+
+        vuex: {
+            actions: {
+                addEntry
+            }
+        },
 
         data() {
             return {
@@ -53,7 +61,7 @@
 
         methods: {
             add() {
-                store.actions.addEntry(this.entry)
+                this.addEntry(this.entry)
 
                 this.show = false
 

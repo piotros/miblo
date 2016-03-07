@@ -1,4 +1,4 @@
-export const userInitialState = {
+const state = {
     nickname    : 'jannowak',
     entriesCount: 3,
     followers   : 2,
@@ -7,6 +7,9 @@ export const userInitialState = {
     surname     : 'Nowak'
 }
 
-export const userActions = {}
+const mutations = {}
 
-export const userMutations = {}
+export default {
+    state,
+    mutations
+}

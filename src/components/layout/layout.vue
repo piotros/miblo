@@ -22,12 +22,15 @@
 </style>
 
 <script>
+    import store      from 'store'
     import Mousetrap  from 'mousetrap'
     import Navigation from 'components/navigation/navigation.vue'
     import EntryAdd   from 'components/entry-add/entry-add.vue'
     import FooterView from 'components/footer/footer.vue'
 
     export default {
+        store,
+
         components: {
             Navigation,
             EntryAdd,

@@ -6,17 +6,16 @@
 
 <script>
     import Entry from 'components/entry/entry.vue'
-    import store from 'store'
 
     export default {
-        components: {
-            Entry
+        vuex: {
+            getters: {
+                entries: store => store.entries
+            }
         },
 
-        data() {
-            return {
-                entries: store.state.entries
-            }
+        components: {
+            Entry
         }
 
     }

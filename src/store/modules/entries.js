@@ -1,6 +1,6 @@
 import {set} from 'vue'
 
-export const entriesInitialState = [{
+const state = [{
     content       : 'lorem',
     authorNickname: 'testnickname',
     authorName    : 'Big Ben',
@@ -10,28 +10,22 @@ export const entriesInitialState = [{
 
 }]
 
-export const entriesActions = {
-    likeEntry: 'LIKE_ENTRY',
-
-    addEntry({dispatch}, entry) {
-        setTimeout(function () {
-            entry.authorNickname = 'aaa'
-            dispatch('ADD_ENTRY', entry)
-        }, 1000)
-    }
-}
-
-export const entriesMutations = {
-    ADD_ENTRY({entries}, entry) {
-        entries.unshift(entry)
+const mutations = {
+    ADD_ENTRY(state, entry) {
+        state.unshift(entry)
     },
 
-    LIKE_ENTRY(store, entry) {
-        // Entry is reference. Should be fixed probably.
+    LIKE_ENTRY(state, entry) {
+        // Entry is reference. Should be changed probably.
         if (entry.likes) {
             entry.likes++
         } else {
             set(entry, 'likes', 1)
         }
     }
+}
+
+export default {
+    state,
+    mutations
 }

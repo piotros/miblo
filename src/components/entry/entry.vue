@@ -9,7 +9,7 @@
             </a>
             <div>{{entry.content}}</div>
             <section class="actions">
-                <i class="like" @click="like()"></i> {{entry.likes}}
+                <i class="like" @click="likeEntry(entry)"></i> {{entry.likes}}
                 <i class="share"></i> {{entry.shares}}
                 <i class="comment"></i> {{entry.comments}}
             </section>
@@ -18,14 +18,14 @@
 </template>
 
 <script>
-    import store from 'store'
+    import { likeEntry } from 'store/actions'
 
     export default {
         props: ['entry'],
 
-        methods: {
-            like() {
-                store.actions.likeEntry(this.entry)
+        vuex: {
+            actions: {
+                likeEntry
             }
         }
     }

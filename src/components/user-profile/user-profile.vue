@@ -8,7 +8,6 @@
 </template>
 
 <script>
-    import store from 'store'
     import UserCard from 'components/user-card/user-card.vue'
 
     export default{
@@ -16,10 +15,16 @@
             UserCard
         },
 
+        vuex: {
+            getters: {
+                currentUser: store => store.user
+            }
+        },
+
         computed: {
             user() {
-                if (this.$route.params.nickname === store.state.user.nickname) {
-                    return store.state.user
+                if (this.$route.params.nickname === this.currentUser.nickname) {
+                    return this.currentUser
                 } else {
                     // get user by nickname
                 }

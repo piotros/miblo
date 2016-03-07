@@ -17,14 +17,12 @@
 </template>
 
 <script>
-    import store from 'store'
-
     export default {
         props: ['addEntry'],
 
-        computed: {
-            currentUser() {
-                return store.state.user
+        vuex: {
+            getters: {
+                currentUser: store => store.user
             }
         }
     }
