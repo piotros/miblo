@@ -1,18 +1,16 @@
 import {set} from 'vue'
 
-const state = [{
-    content       : 'lorem',
-    authorNickname: 'testnickname',
-    authorName    : 'Big Ben',
-    likes         : 3,
-    comments      : 5,
-    shares        : 4
-
-}]
+const state = {
+    all: []
+}
 
 const mutations = {
+    RECEIVE_ENTRIES (state, entries) {
+        state.all = entries
+    },
+
     ADD_ENTRY(state, entry) {
-        state.unshift(entry)
+        state.all.unshift(entry)
     },
 
     LIKE_ENTRY(state, entry) {
