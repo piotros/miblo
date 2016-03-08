@@ -13,9 +13,14 @@ export const likeEntry = ({ dispatch }, entry) => {
     dispatch('LIKE_ENTRY', entry)
 }
 
-export const addEntry = ({ dispatch }, entry) => {
-    setTimeout(function () {
-        entry.authorNickname = 'aaa'
-        dispatch('ADD_ENTRY', entry)
-    }, 1000)
+export const addEntry = ({ dispatch, state }, entry) => {
+    entry.authorNickname = state.user.nickname
+
+    entriesApi.addEntry({
+        entry,
+        success: ({ data }) => dispatch('ADD_ENTRY', data),
+        error  : () => {
+            //adding unsuccessful
+        }
+    })
 }
