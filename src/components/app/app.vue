@@ -22,14 +22,21 @@
 </style>
 
 <script>
-    import store      from 'vuex/store'
-    import Mousetrap  from 'mousetrap'
-    import Navigation from 'components/navigation/navigation.vue'
-    import EntryAdd   from 'components/entry-add/entry-add.vue'
-    import FooterView from 'components/footer/footer.vue'
+    import store            from 'vuex/store'
+    import Mousetrap        from 'mousetrap'
+    import Navigation       from 'components/navigation/navigation.vue'
+    import EntryAdd         from 'components/entry-add/entry-add.vue'
+    import FooterView       from 'components/footer/footer.vue'
+    import { fetchEntries } from 'vuex/actions'
 
     export default {
         store,
+
+        vuex: {
+            actions: {
+                fetchEntries
+            }
+        },
 
         components: {
             Navigation,
@@ -44,6 +51,8 @@
         },
 
         created() {
+            this.fetchEntries()
+
             Mousetrap.bind('a e', function () {
                 this.addEntry = true
                 return false

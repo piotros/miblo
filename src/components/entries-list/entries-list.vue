@@ -5,25 +5,17 @@
 </template>
 
 <script>
-    import Entry            from 'components/entry/entry.vue'
-    import { fetchEntries } from 'vuex/actions'
+    import Entry from 'components/entry/entry.vue'
 
     export default {
         vuex: {
             getters: {
                 entries: store => store.entries.all
-            },
-            actions: {
-                fetchEntries
             }
         },
 
         components: {
             Entry
-        },
-
-        created() {
-            this.fetchEntries()
         }
 
     }
