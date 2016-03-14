@@ -1,7 +1,7 @@
 import Vue            from 'vue'
 import VueRouter      from 'vue-router'
 import VueResource    from 'vue-resource'
-import Layout         from 'components/layout/layout.vue'
+import App            from 'components/app/app.vue'
 import configRouter   from 'router-config.js'
 
 Vue.use(VueRouter)
@@ -13,4 +13,4 @@ const router = new VueRouter({
 
 configRouter(router)
 
-router.start(Layout, '#app')
+router.start(App, '#app')

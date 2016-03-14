@@ -4,7 +4,7 @@ var path              = require('path')
 
 module.exports = {
 
-    entry: './src/app.js',
+    entry: './src/main.js',
 
     output: {
         path      : './www',
