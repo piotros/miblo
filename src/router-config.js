@@ -1,8 +1,8 @@
-import Sandbox                 from 'components/sandbox/sandbox.vue'
-import Tags                    from 'components/tags/tags.vue'
-import EntriesList             from 'components/entries-list/entries-list.vue'
-import UserProfile             from 'components/user-profile/user-profile.vue'
-import NotFound                from 'components/not-found/not-found.vue'
+import Sandbox                 from 'components/sandbox.vue'
+import Tags                    from 'components/tags.vue'
+import EntriesList             from 'components/entries-list.vue'
+import UserProfile             from 'components/user-profile.vue'
+import NotFound                from 'components/not-found.vue'
 
 const routes = {
     '/sandbox': {

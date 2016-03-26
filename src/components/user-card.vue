@@ -24,9 +24,54 @@
     </section>
 </template>
 
-<style lang="sass" scoped src="./_user-card.scss"></style>
+<style lang="sass" scoped rel="stylesheet/scss">
+    @import 'settings';
 
-<script>
+    $stat-height: 40px;
+
+    .user-card {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .personal-info {
+        width: 100%;
+    }
+
+    .stats {
+        flex-grow: 1;
+    }
+
+    .stat {
+        height: $stat-height;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #EFEFEF;
+    }
+
+    .stat-title {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .stat-counter {
+        display: flex;
+        align-items: center;
+        background-color: #EFEFEF;
+
+        &:before {
+            @include css-triangle($stat-height / 2, #EFEFEF, 'left');
+            margin-left: -$stat-height / 2;
+            display: inline-block;
+        }
+
+    }
+</style>
+
+<script type="text/babel">
     export default{
         props: ['user']
     }

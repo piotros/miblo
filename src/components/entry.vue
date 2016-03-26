@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import { likeEntry } from 'vuex/actions'
+    import {likeEntry} from 'vuex/actions'
 
     export default {
         props: ['entry'],
@@ -31,4 +31,4 @@
     }
 </script>
 
-<style lang="sass" scoped src="./_entry.scss"></style>
+<style lang="sass" scoped src="./entry/_entry.scss"></style>

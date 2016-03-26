@@ -23,9 +23,9 @@
     </div>
 </template>
 
-<script>
-    import { addEntry }    from 'vuex/actions'
-    import { focus }       from 'vue-focus'
+<script type="text/babel">
+    import {addEntry}    from 'vuex/actions'
+    import {focus}       from 'vue-focus'
 
     let getEmptyEntry = function () {
         return {
@@ -71,4 +71,65 @@
     }
 </script>
 
-<style lang="sass" scoped src="./_entry-add.scss"></style>
+<style lang="sass" scoped rel="stylesheet/scss">
+    @import 'settings';
+    @import '~foundation-sites/scss/components/button';
+    @import '~foundation-sites/scss/components/callout';
+    @import '~foundation-sites/scss/forms/forms';
+
+    .modal-mask {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        display: table;
+        transition: opacity .3s ease;
+    }
+
+    .modal-wrapper {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .modal-container {
+        width: 300px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+        transition: all .3s ease;
+    }
+
+    .modal-enter, .modal-leave {
+        opacity: 0;
+    }
+
+    .modal-enter .modal-container,
+    .modal-leave .modal-container {
+        transform: scale(1.1);
+    }
+
+    .modal-header {
+        @include callout;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .modal-footer {
+        @include callout;
+    }
+
+    .entry-add-button {
+        @include button;
+    }
+
+    textarea {
+        @include form-element;
+    }
+
+    @include icon(close, $fa-var-close);
+</style>

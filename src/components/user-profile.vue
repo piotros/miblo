@@ -15,8 +15,8 @@
 
 <script type="text/babel">
     import usersApi from 'api/users.js'
-    import Loader   from 'components/loader/loader.vue'
-    import UserCard from 'components/user-card/user-card.vue'
+    import Loader   from 'components/loader.vue'
+    import UserCard from 'components/user-card.vue'
 
     export default{
         components: {
@@ -49,7 +49,7 @@
                 usersApi.getUser({
                     nickname: this.$route.params.nickname,
 
-                    success: ({ data }) => {
+                    success: ({data}) => {
                         transition.next({
                             user: data
                         })

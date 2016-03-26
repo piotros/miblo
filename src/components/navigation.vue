@@ -16,7 +16,7 @@
     </nav>
 </template>
 
-<script>
+<script type="text/babel">
     export default {
         props: ['addEntry'],
 
@@ -28,4 +28,26 @@
     }
 </script>
 
-<style lang="sass" scoped src="./_navigation.scss"></style>
+<style lang="sass" scoped rel="stylesheet/scss">
+    @import "settings";
+    @import "~foundation-sites/scss/components/top-bar";
+    @import "~foundation-sites/scss/components/menu";
+
+    .navigation {
+        @include top-bar-container;
+    }
+
+    .main-menu, .secondary-menu {
+        @include menu-base;
+    }
+
+    @include breakpoint(medium) {
+        .main-menu {
+            float: left;
+        }
+
+        .secondary-menu {
+            float: right
+        }
+    }
+</style>

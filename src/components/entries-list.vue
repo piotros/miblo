@@ -4,8 +4,8 @@
     </div>
 </template>
 
-<script>
-    import Entry from 'components/entry/entry.vue'
+<script type="text/babel">
+    import Entry from 'components/entry.vue'
 
     export default {
         vuex: {

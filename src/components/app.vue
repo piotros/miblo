@@ -21,13 +21,13 @@
     }
 </style>
 
-<script>
+<script type="text/babel">
     import store            from 'vuex/store'
     import Mousetrap        from 'mousetrap'
-    import Navigation       from 'components/navigation/navigation.vue'
-    import EntryAdd         from 'components/entry-add/entry-add.vue'
-    import FooterView       from 'components/footer/footer.vue'
-    import { fetchEntries } from 'vuex/actions'
+    import Navigation       from 'components/navigation.vue'
+    import EntryAdd         from 'components/entry-add.vue'
+    import FooterView       from 'components/footer.vue'
+    import {fetchEntries}   from 'vuex/actions'
 
     export default {
         store,
