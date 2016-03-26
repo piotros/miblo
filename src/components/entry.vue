@@ -31,4 +31,39 @@
     }
 </script>
 
-<style lang="sass" scoped src="./entry/_entry.scss"></style>
+<style lang="sass" scoped rel="stylesheet/scss">
+    @import 'settings';
+    @import '~foundation-sites/scss/components/callout';
+    @import '~foundation-sites/scss/components/media-object';
+
+    $callout-border: none;
+
+    .entry {
+        @include callout;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    }
+
+    .entry-data {
+        @include media-object-section;
+    }
+
+    .user-info {
+        @include media-object-section;
+    }
+
+    .bounce-transition {
+        opacity: 1;
+        transform: none;
+        transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+    }
+
+    .bounce-enter, .bounce-leave {
+        opacity: 0;
+        transform: rotateX(-90deg);
+        transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+    }
+
+    @include icon(like, $fa-var-thumbs-up)
+    @include icon(share, $fa-var-retweet)
+    @include icon(comment, $fa-var-comment)
+</style>
