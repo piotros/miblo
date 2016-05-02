@@ -18,7 +18,7 @@
     "build": "npm run clean && webpack -p --progress --colors",
     "clean": "rm -rf www/*",
     "clean-logs": "rm -rf logs/*",
-    "dev": "npm run clean && webpack -d --progress --colors & webpack-dev-server --progress --colors --inline --content-base www/",
+    "dev": "npm run clean && webpack -d --progress --colors & webpack-dev-server --progress --colors --inline --hot --content-base www/",
     "analyse": "mkdir logs && webpack --json > logs/analyse.json"
   },
   "devDependencies": {
