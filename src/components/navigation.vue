@@ -11,18 +11,22 @@
                     {{currentUser.name}} {{currentUser.surname}}
                 </a>
             </li>
-            <li><a @click.prevent="addEntry = true">Add entry</a></li>
+            <li><a @click.prevent="openEntryAddModal()">Add entry</a></li>
         </ul>
     </nav>
 </template>
 
 <script type="text/babel">
-    export default {
-        props: ['addEntry'],
+    import {openEntryAddModal}    from 'vuex/actions'
 
+    export default {
         vuex: {
             getters: {
                 currentUser: store => store.user
+            },
+
+            actions: {
+                openEntryAddModal
             }
         }
     }

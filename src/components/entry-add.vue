@@ -1,17 +1,17 @@
 <template>
-    <div class="modal-mask" v-show="show" transition="modal">
+    <div class="modal-mask" v-show="entryAddModalOpened" transition="modal">
         <div class="modal-wrapper">
             <div class="modal-container">
                 <div class="modal-header">
                     Add entry
-                    <i class="close" @click="show = false"></i>
+                    <i class="close" @click="closeEntryAddModal()"></i>
                 </div>
                 <div class="modal-body">
                     <textarea v-model="entry.content"
                               maxlength="{{entryMaxLength}}"
                               @keydown.enter.prevent="add"
-                              @keydown.esc.prevent="show = false"
-                              v-focus="show">
+                              @keydown.esc.prevent="closeEntryAddModal()"
+                              v-focus="entryAddModalOpened">
                     </textarea>
                 </div>
                 <div class="modal-footer">
@@ -24,7 +24,7 @@
 </template>
 
 <script type="text/babel">
-    import {addEntry}    from 'vuex/actions'
+    import {addEntry, closeEntryAddModal}    from 'vuex/actions'
     import {focus}       from 'vue-focus'
 
     let getEmptyEntry = function () {
@@ -34,15 +34,18 @@
     }
 
     export default {
-        props: ['show'],
-
         directives: {
             focus
         },
 
         vuex: {
+            getters: {
+                entryAddModalOpened: store => store.ui.entryAddModalOpened
+            },
+
             actions: {
-                addEntry
+                addEntry,
+                closeEntryAddModal
             }
         },
 
@@ -63,7 +66,7 @@
             add() {
                 this.addEntry(this.entry)
 
-                this.show = false
+                this.closeEntryAddModal()
 
                 this.entry = getEmptyEntry()
             }

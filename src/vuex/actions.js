@@ -24,3 +24,11 @@ export const addEntry = ({dispatch, state}, entry) => {
         }
     })
 }
+
+export const closeEntryAddModal = ({dispatch}) => {
+    dispatch('CLOSE_ENTRY_ADD_MODAL')
+}
+
+export const openEntryAddModal = ({dispatch}) => {
+    dispatch('OPEN_ENTRY_ADD_MODAL')
+}

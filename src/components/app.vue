@@ -1,7 +1,7 @@
 <template>
     <div class="layout">
-        <navigation :add-entry.sync="addEntry"></navigation>
-        <entry-add :show.sync="addEntry"></entry-add>
+        <navigation></navigation>
+        <entry-add></entry-add>
         <router-view></router-view>
         <footer-view></footer-view>
     </div>
@@ -27,14 +27,20 @@
     import Navigation       from 'components/navigation.vue'
     import EntryAdd         from 'components/entry-add.vue'
     import FooterView       from 'components/footer.vue'
-    import {fetchEntries}   from 'vuex/actions'
+    import {
+        fetchEntries,
+        openEntryAddModal,
+        closeEntryAddModal
+    } from 'vuex/actions'
 
     export default {
         store,
 
         vuex: {
             actions: {
-                fetchEntries
+                fetchEntries,
+                openEntryAddModal,
+                closeEntryAddModal
             }
         },
 
@@ -44,22 +50,16 @@
             FooterView
         },
 
-        data() {
-            return {
-                addEntry: false
-            }
-        },
-
         created() {
             this.fetchEntries()
 
             Mousetrap.bind('a e', function () {
-                this.addEntry = true
+                this.openEntryAddModal()
                 return false
             }.bind(this))
 
             Mousetrap.bind('esc', function () {
-                this.addEntry = false
+                this.closeEntryAddModal()
                 return false
             }.bind(this))
         }
