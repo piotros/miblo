@@ -3,6 +3,7 @@ import Tags                    from 'components/tags.vue'
 import MainEntriesList         from 'components/main-entries-list.vue'
 import UserProfile             from 'components/user-profile.vue'
 import NotFound                from 'components/not-found.vue'
+import TagEntriesList          from 'components/tag-entries-list.vue'
 
 const routes = {
     '/sandbox': {
@@ -15,7 +16,7 @@ const routes = {
 
     '/tags/:tagname': {
         name     : 'tags',
-        component: Tags
+        component: TagEntriesList
     },
 
     '/entries': {

@@ -24,3 +24,21 @@ export const addEntry = ({dispatch, state}, entry) => {
 export const likeEntry = ({dispatch}, entry) => dispatch('LIKE_ENTRY', entry)
 export const closeEntryAddModal = ({dispatch}) => dispatch('CLOSE_ENTRY_ADD_MODAL')
 export const openEntryAddModal = ({dispatch}) => dispatch('OPEN_ENTRY_ADD_MODAL')
+export const setCurrentTag = ({dispatch}, tagName) => dispatch('SET_CURRENT_TAG', tagName)
+
+export const fetchTagsList = ({dispatch}, callback) => {
+    setTimeout(() => {
+        dispatch('RECEIVE_TAGS_LIST', {
+            popular: ['aaa', 'bbb'],
+            newest: ['ccc', 'ddd']
+        })
+        callback()
+    }, 3000)
+}
+
+export const fetchCurrentTagEntries = ({dispatch, state}, callback) => {
+    setTimeout(() => {
+        dispatch('RECEIVE_CURRENT_TAG_ENTRIES', [{}, {}, {}])
+        callback()
+    }, 3000)
+}
