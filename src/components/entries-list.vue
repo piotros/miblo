@@ -8,11 +8,7 @@
     import Entry from 'components/entry.vue'
 
     export default {
-        vuex: {
-            getters: {
-                entries: store => store.entries.all
-            }
-        },
+        props: ['entries'],
 
         components: {
             Entry
