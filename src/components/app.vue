@@ -1,11 +1,14 @@
 <template>
     <div class="layout">
-        <navigation></navigation>
-        <entry-add></entry-add>
-        <signup></signup>
-        <login></login>
-        <router-view></router-view>
-        <footer-view></footer-view>
+        <loader v-if="!isAppReady"></loader>
+        <div v-if="isAppReady">
+            <navigation></navigation>
+            <entry-add></entry-add>
+            <signup></signup>
+            <login></login>
+            <router-view></router-view>
+            <footer-view></footer-view>
+        </div>
     </div>
 </template>
 
@@ -26,6 +29,7 @@
 <script type="text/babel">
     import store            from 'vuex/store'
     import Mousetrap        from 'mousetrap'
+    import Loader           from 'components/loader.vue'
     import Navigation       from 'components/navigation.vue'
     import EntryAdd         from 'components/entry-add.vue'
     import Signup           from 'components/signup.vue'
@@ -34,17 +38,25 @@
     import {
         fetchEntries,
         openEntryAddModal,
-        closeEntryAddModal
+        closeEntryAddModal,
+        setAppAsReady,
+        getAppInitialData
     } from 'vuex/actions'
 
     export default {
         store,
 
         vuex: {
+            getters: {
+                isAppReady: store => store.app.isAppReady
+            },
+
             actions: {
                 fetchEntries,
                 openEntryAddModal,
-                closeEntryAddModal
+                closeEntryAddModal,
+                setAppAsReady,
+                getAppInitialData
             }
         },
 
@@ -53,6 +65,7 @@
             EntryAdd,
             Signup,
             Login,
+            Loader,
             FooterView
         },
 
@@ -68,6 +81,14 @@
                 this.closeEntryAddModal()
                 return false
             }.bind(this))
+        },
+
+        ready() {
+            if(!localStorage.getItem('token')) {
+                this.setAppAsReady()
+            } else {
+                this.getAppInitialData()
+            }
         }
     }
 </script>

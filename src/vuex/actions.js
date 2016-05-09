@@ -31,6 +31,13 @@ export const closeLoginModal = ({dispatch}) => dispatch('CLOSE_LOGIN_MODAL')
 export const authorizeUser = ({dispatch}) => dispatch('AUTHORIZE_USER')
 export const deauthorizeUser = ({dispatch}) => dispatch('DEAUTHORIZE_USER')
 export const setCurrentTag = ({dispatch}, tagName) => dispatch('SET_CURRENT_TAG', tagName)
+export const setAppAsReady = ({dispatch}) => dispatch('SET_APP_AS_READY')
+
+export const getAppInitialData = ({dispatch}) => {
+    setTimeout(() => {
+        dispatch('SET_APP_AS_READY')
+    }, 3000)
+}
 
 export const fetchTagsList = ({dispatch}, callback) => {
     setTimeout(() => {
