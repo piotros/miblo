@@ -2,6 +2,8 @@
     <div class="layout">
         <navigation></navigation>
         <entry-add></entry-add>
+        <signup></signup>
+        <login></login>
         <router-view></router-view>
         <footer-view></footer-view>
     </div>
@@ -26,6 +28,8 @@
     import Mousetrap        from 'mousetrap'
     import Navigation       from 'components/navigation.vue'
     import EntryAdd         from 'components/entry-add.vue'
+    import Signup           from 'components/signup.vue'
+    import Login            from 'components/login.vue'
     import FooterView       from 'components/footer.vue'
     import {
         fetchEntries,
@@ -47,6 +51,8 @@
         components: {
             Navigation,
             EntryAdd,
+            Signup,
+            Login,
             FooterView
         },
 
