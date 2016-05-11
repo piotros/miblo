@@ -78,9 +78,6 @@
 
     .modal-footer {
         @include callout;
-        button {
-            margin-bottom: 0;
-        }
     }
 
     @include icon(close, $fa-var-close);
