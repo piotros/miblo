@@ -9,7 +9,7 @@ $body-font-color: #525255;
 
 @mixin icon($icon-name, $fa-var-name) {
   .#{$icon-name} {
-    @include fa-icon();
+    @include fa-icon;
     &:before {
       content: $fa-var-name;
     }
