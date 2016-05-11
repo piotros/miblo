@@ -1,19 +1,26 @@
 const state = {
-    nickname       : 'jannowak',
-    entriesCount   : 3,
-    followers      : 2,
-    following      : 1,
-    name           : 'Jan',
-    surname        : 'Nowak',
-    isAuthenticated: false
+    isAuthenticated: false,
+    profile: {
+        nickname       : 'jannowak',
+        entriesCount   : 3,
+        followers      : 2,
+        following      : 1,
+        name           : 'Jan',
+        surname        : 'Nowak',
+        avatar         : 'link'
+    }
 }
 
 const mutations = {
-    AUTHORIZE_USER (state) {
+    SET_USER_DATA (state, data) {
+        state.profile = data
+    },
+
+    AUTHENTICATE_USER (state) {
         state.isAuthenticated = true
     },
 
-    DEAUTHORIZE_USER (state) {
+    DEAUTHENTICATE_USER (state) {
         state.isAuthenticated = false
     }
 

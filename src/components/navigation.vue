@@ -11,13 +11,15 @@
                     {{currentUser.name}} {{currentUser.surname}}
                 </a>
             </li>
+            <li class="avatar">
+                <img v-bind:src="currentUser.avatar" alt="Avatar" />
+            </li>
             <li><a @click.prevent="openEntryAddModal()">Add entry</a></li>
-            <li><a @click.prevent="deauthorizeUser()">Logout</a></li>
+            <li><a @click.prevent="logout()">Logout</a></li>
         </ul>
         <ul class="secondary-menu" v-if="!isAuthenticated">
             <li><a @click.prevent="openSignupModal()">Sign up</a></li>
             <li><a @click.prevent="openLoginModal()">Login</a></li>
-            <li><a @click.prevent="authorizeUser()">Fake Login</a></li>
         </ul>
     </nav>
 </template>
@@ -27,14 +29,13 @@
         openEntryAddModal,
         openSignupModal,
         openLoginModal,
-        authorizeUser,
-        deauthorizeUser
+        logout
     } from 'vuex/actions'
 
     export default {
         vuex: {
             getters: {
-                currentUser: store => store.user,
+                currentUser: store => store.user.profile,
                 isAuthenticated: store => store.user.isAuthenticated
             },
 
@@ -42,8 +43,7 @@
                 openEntryAddModal,
                 openSignupModal,
                 openLoginModal,
-                authorizeUser,
-                deauthorizeUser
+                logout
             }
         }
     }

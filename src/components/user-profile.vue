@@ -41,7 +41,7 @@
 
         vuex: {
             getters: {
-                currentUser: store => store.user,
+                currentUser: store => store.user.profile,
                 selectedUser: store => store.selectedUser,
                 entries: store => store.selectedUser.entries.all
             }

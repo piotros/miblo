@@ -1,4 +1,5 @@
 import entriesApi from 'api/entries.js'
+import currentUserApi from 'api/current-user.js'
 
 export const fetchEntries = ({dispatch}) => {
     entriesApi.fetchEntries({
@@ -28,15 +29,22 @@ export const openSignupModal = ({dispatch}) => dispatch('OPEN_SIGNUP_MODAL')
 export const closeSignupModal = ({dispatch}) => dispatch('CLOSE_SIGNUP_MODAL')
 export const openLoginModal = ({dispatch}) => dispatch('OPEN_LOGIN_MODAL')
 export const closeLoginModal = ({dispatch}) => dispatch('CLOSE_LOGIN_MODAL')
-export const authorizeUser = ({dispatch}) => dispatch('AUTHORIZE_USER')
-export const deauthorizeUser = ({dispatch}) => dispatch('DEAUTHORIZE_USER')
+export const logout = ({dispatch}) => dispatch('DEAUTHENTICATE_USER')
 export const setCurrentTag = ({dispatch}, tagName) => dispatch('SET_CURRENT_TAG', tagName)
 export const setAppAsReady = ({dispatch}) => dispatch('SET_APP_AS_READY')
 
 export const getAppInitialData = ({dispatch}) => {
-    setTimeout(() => {
-        dispatch('SET_APP_AS_READY')
-    }, 3000)
+    currentUserApi.getCurrentUser({
+        success: ({data}) => {
+            dispatch('SET_USER_DATA', data)
+            dispatch('AUTHENTICATE_USER')
+            dispatch('SET_APP_AS_READY')
+        },
+
+        error: () => {
+            dispatch('SET_APP_AS_READY')
+        }
+    })
 }
 
 export const fetchTagsList = ({dispatch}, callback) => {
