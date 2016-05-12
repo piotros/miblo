@@ -1,10 +1,14 @@
 <template>
     <div class="home-screen">
-        <h1>Welcome to miblo.</h1>
-        Signup
-        <signup-panel></signup-panel>
-        Login
-        <login-panel></login-panel>
+        <div class="welcome">
+            <h1>Welcome to miblo.</h1>
+        </div>
+        <div class="join-us">
+            Signup
+            <signup-panel></signup-panel>
+            Login
+            <login-panel></login-panel>
+        </div>
     </div>
 </template>
 
@@ -23,6 +27,19 @@
 <style lang="sass" scoped rel="stylesheet/scss">
     @import 'settings';
     @import '~foundation-sites/scss/components/callout';
+    @import '~foundation-sites/scss/grid/grid';
+
+    .home-screen {
+        @include grid-row;
+    }
+
+    .welcome {
+        @include grid-column(7);
+    }
+
+    .join-us {
+        @include grid-column(5);
+    }
 
     .login-panel,
     .signup-panel {
