@@ -50,7 +50,7 @@
     }
 
     .modal-container {
-        width: 300px;
+        width: 400px;
         margin: 0 auto;
         background-color: #fff;
         border-radius: 2px;
