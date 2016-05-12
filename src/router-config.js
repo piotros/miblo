@@ -4,6 +4,7 @@ import MainEntriesList         from 'components/main-entries-list.vue'
 import UserProfile             from 'components/user-profile.vue'
 import NotFound                from 'components/not-found.vue'
 import TagEntriesList          from 'components/tag-entries-list.vue'
+import HomeScreen              from 'components/home-screen.vue'
 
 const routes = {
     '/sandbox': {
@@ -30,6 +31,10 @@ const routes = {
 
     '/404': {
         component: NotFound
+    },
+
+    '/': {
+        component: HomeScreen
     }
 }
 
