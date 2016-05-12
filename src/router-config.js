@@ -1,14 +1,23 @@
-import Sandbox                 from 'components/sandbox.vue'
 import Tags                    from 'components/tags.vue'
 import MainEntriesList         from 'components/main-entries-list.vue'
 import UserProfile             from 'components/user-profile.vue'
 import NotFound                from 'components/not-found.vue'
 import TagEntriesList          from 'components/tag-entries-list.vue'
 import HomeScreen              from 'components/home-screen.vue'
+import LoginWindow             from 'components/login-window.vue'
+import SignupWindow            from 'components/signup-window.vue'
 
 const routes = {
-    '/sandbox': {
-        component: Sandbox
+    '/': {
+        component: HomeScreen
+    },
+
+    '/login': {
+        component: LoginWindow
+    },
+
+    'signup': {
+        component: SignupWindow
     },
 
     '/tags': {
@@ -31,10 +40,6 @@ const routes = {
 
     '/404': {
         component: NotFound
-    },
-
-    '/': {
-        component: HomeScreen
     }
 }
 

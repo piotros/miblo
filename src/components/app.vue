@@ -4,8 +4,8 @@
         <div v-if="isAppReady">
             <navigation></navigation>
             <entry-add></entry-add>
-            <signup></signup>
-            <login></login>
+            <signup-modal></signup-modal>
+            <login-modal></login-modal>
             <router-view></router-view>
             <footer-view></footer-view>
         </div>
@@ -32,8 +32,8 @@
     import Loader           from 'components/loader.vue'
     import Navigation       from 'components/navigation.vue'
     import EntryAdd         from 'components/entry-add.vue'
-    import Signup           from 'components/signup.vue'
-    import Login            from 'components/login.vue'
+    import SignupModal      from 'components/signup-modal.vue'
+    import LoginModal       from 'components/login-modal.vue'
     import FooterView       from 'components/footer.vue'
     import {
         fetchEntries,
@@ -63,8 +63,8 @@
         components: {
             Navigation,
             EntryAdd,
-            Signup,
-            Login,
+            SignupModal,
+            LoginModal,
             Loader,
             FooterView
         },
