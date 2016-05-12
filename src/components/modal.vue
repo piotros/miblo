@@ -13,11 +13,7 @@
                         Default modal body
                     </slot>
                 </div>
-                <div class="modal-footer">
-                    <slot name="footer">
-                        Default modal footer
-                    </slot>
-                </div>
+                <div class="modal-footer"><slot name="footer"></slot></div>
             </div>
         </div>
     </div>
@@ -33,6 +29,8 @@
     @import 'settings';
     @import '~foundation-sites/scss/components/callout';
     @import '~foundation-sites/scss/forms/forms';
+
+    $callout-margin: 0;
 
     .modal-mask {
         position: fixed;
@@ -76,8 +74,16 @@
         justify-content: space-between;
     }
 
+    .modal-body {
+        @include callout;
+    }
+
     .modal-footer {
         @include callout;
+
+        &:empty {
+            display: none;
+        }
     }
 
     @include icon(close, $fa-var-close);

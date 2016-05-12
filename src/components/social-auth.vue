@@ -15,6 +15,15 @@
     @import 'settings';
     @import '~foundation-sites/scss/components/button';
 
+    .social-auth {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    a {
+        width: 48%;
+    }
+
     .facebook-login-button {
         @include button(
             $background: #4E69A2,
