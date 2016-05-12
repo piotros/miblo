@@ -6,18 +6,22 @@ import TagEntriesList          from 'components/tag-entries-list.vue'
 import HomeScreen              from 'components/home-screen.vue'
 import LoginWindow             from 'components/login-window.vue'
 import SignupWindow            from 'components/signup-window.vue'
+import store                   from 'vuex/store'
 
 const routes = {
     '/': {
-        component: HomeScreen
+        component: HomeScreen,
+        auth: false
     },
 
     '/login': {
-        component: LoginWindow
+        component: LoginWindow,
+        auth: false
     },
 
-    'signup': {
-        component: SignupWindow
+    '/signup': {
+        component: SignupWindow,
+        auth: false
     },
 
     '/tags': {
@@ -39,15 +43,25 @@ const routes = {
     },
 
     '/404': {
-        component: NotFound
+        component: NotFound,
+        auth: false
     }
 }
 
 const redirects = {
-    '*': '/entries'
+    '*': '/'
+}
+
+const beforeEach = (transition) => {
+    if (store.state.user.isAuthenticated || transition.to.auth === false) {
+        transition.next()
+    } else {
+        transition.redirect('/login')
+    }
 }
 
 export default function (router) {
     router.map(routes)
     router.redirect(redirects)
+    router.beforeEach(beforeEach)
 }

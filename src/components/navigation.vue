@@ -5,6 +5,9 @@
             <li><a v-link="{ path: '/tags' }">Tags</a></li>
             <li><a v-link="{ path: '/watched' }">Watched</a></li>
         </ul>
+        <ul class="main-menu" v-if="!isAuthenticated">
+            <li><a v-link="{ path: '/' }">miblo</a></li>
+        </ul>
         <ul class="secondary-menu" v-if="isAuthenticated">
             <li>
                 <a v-link="{ name: 'user', params: { nickname: currentUser.nickname } }">
