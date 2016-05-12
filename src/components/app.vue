@@ -36,10 +36,10 @@
     import LoginModal       from 'components/login-modal.vue'
     import FooterView       from 'components/footer.vue'
     import {
-        fetchEntries,
         openEntryAddModal,
         closeEntryAddModal,
         setAppAsReady,
+        authenticateUser,
         getAppInitialData
     } from 'vuex/actions'
 
@@ -52,10 +52,10 @@
             },
 
             actions: {
-                fetchEntries,
                 openEntryAddModal,
                 closeEntryAddModal,
                 setAppAsReady,
+                authenticateUser,
                 getAppInitialData
             }
         },
@@ -70,8 +70,6 @@
         },
 
         created() {
-            this.fetchEntries()
-
             Mousetrap.bind('a e', function () {
                 this.openEntryAddModal()
                 return false
@@ -87,6 +85,7 @@
             if(!localStorage.getItem('token')) {
                 this.setAppAsReady()
             } else {
+                this.authenticateUser()
                 this.getAppInitialData()
             }
         }

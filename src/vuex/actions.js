@@ -1,9 +1,12 @@
 import entriesApi from 'api/entries.js'
 import currentUserApi from 'api/current-user.js'
 
-export const fetchEntries = ({dispatch}) => {
+export const fetchEntries = ({dispatch}, callback) => {
     entriesApi.fetchEntries({
-        success: ({data}) => dispatch('RECEIVE_ENTRIES', data),
+        success: ({data}) => {
+            dispatch('RECEIVE_ENTRIES', data)
+            callback()
+        },
         error  : () => {
             //fetching unsuccessful
         }
@@ -30,6 +33,7 @@ export const closeSignupModal = ({dispatch}) => dispatch('CLOSE_SIGNUP_MODAL')
 export const openLoginModal = ({dispatch}) => dispatch('OPEN_LOGIN_MODAL')
 export const closeLoginModal = ({dispatch}) => dispatch('CLOSE_LOGIN_MODAL')
 export const logout = ({dispatch}) => dispatch('DEAUTHENTICATE_USER')
+export const authenticateUser = ({dispatch}) => dispatch('AUTHENTICATE_USER')
 export const setCurrentTag = ({dispatch}, tagName) => dispatch('SET_CURRENT_TAG', tagName)
 export const setAppAsReady = ({dispatch}) => dispatch('SET_APP_AS_READY')
 
@@ -37,11 +41,11 @@ export const getAppInitialData = ({dispatch}) => {
     currentUserApi.getCurrentUser({
         success: ({data}) => {
             dispatch('SET_USER_DATA', data)
-            dispatch('AUTHENTICATE_USER')
             dispatch('SET_APP_AS_READY')
         },
 
         error: () => {
+            dispatch('DEAUTHENTICATE_USER')
             dispatch('SET_APP_AS_READY')
         }
     })

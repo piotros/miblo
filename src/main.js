@@ -16,6 +16,6 @@ const router = new VueRouter({
 })
 
 configRouter(router)
-// sync(store, router)
+sync(store, router)
 
 router.start(App, '#app')
