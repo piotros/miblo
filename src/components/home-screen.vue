@@ -1,25 +1,52 @@
 <template>
     <div class="home-screen">
-        <div class="welcome">
-            <h1>Welcome to miblo.</h1>
-        </div>
-        <div class="join-us">
-            Signup
-            <signup-panel></signup-panel>
-            Login
-            <login-panel></login-panel>
-        </div>
+        <template v-if="!isAuthenticated">
+            <div class="welcome">
+                <h1>Welcome to miblo.</h1>
+            </div>
+            <div class="join-us">
+                Signup
+                <signup-panel></signup-panel>
+                Login
+                <login-panel></login-panel>
+            </div>
+        </template>
+
+        <main-entries-list v-if="isAuthenticated"></main-entries-list>
     </div>
 </template>
 
 <script type="text/babel">
-    import SignupPanel from 'components/signup-panel.vue'
-    import LoginPanel  from 'components/login-panel.vue'
+    import SignupPanel     from 'components/signup-panel.vue'
+    import LoginPanel      from 'components/login-panel.vue'
+    import MainEntriesList from 'components/main-entries-list.vue'
+    import {fetchEntries}  from 'vuex/actions'
 
     export default {
         components: {
             SignupPanel,
-            LoginPanel
+            LoginPanel,
+            MainEntriesList
+        },
+
+        vuex: {
+            getters: {
+                isAuthenticated: store => store.user.isAuthenticated
+            },
+
+            actions: {
+                fetchEntries
+            }
+        },
+
+        route: {
+            data(transition) {
+                if (this.isAuthenticated) {
+                    this.fetchEntries(transition.next)
+                } else {
+                    transition.next()
+                }
+            }
         }
     }
 </script>

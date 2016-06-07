@@ -39,6 +39,7 @@
             openEntryAddModal,
             closeEntryAddModal,
             setAppAsReady,
+            authenticateUser,
             getAppInitialData
     } from 'vuex/actions'
 
@@ -54,6 +55,7 @@
                 openEntryAddModal,
                 closeEntryAddModal,
                 setAppAsReady,
+                authenticateUser,
                 getAppInitialData
             }
         },
@@ -83,6 +85,7 @@
             if (!localStorage.getItem('token')) {
                 this.setAppAsReady()
             } else {
+                this.authenticateUser()
                 this.getAppInitialData()
             }
         }

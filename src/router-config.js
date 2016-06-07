@@ -1,5 +1,5 @@
 import Tags                    from 'components/tags.vue'
-import MainEntriesList         from 'components/main-entries-list.vue'
+import Notifications           from 'components/notifications.vue'
 import UserProfile             from 'components/user-profile.vue'
 import NotFound                from 'components/not-found.vue'
 import TagEntriesList          from 'components/tag-entries-list.vue'
@@ -33,8 +33,8 @@ const routes = {
         component: TagEntriesList
     },
 
-    '/entries': {
-        component: MainEntriesList
+    '/notifications': {
+        component: Notifications
     },
 
     '/user/:nickname': {

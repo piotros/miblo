@@ -32,6 +32,7 @@ export const openSignupModal    = ({dispatch}) => dispatch('OPEN_SIGNUP_MODAL')
 export const closeSignupModal   = ({dispatch}) => dispatch('CLOSE_SIGNUP_MODAL')
 export const openLoginModal     = ({dispatch}) => dispatch('OPEN_LOGIN_MODAL')
 export const closeLoginModal    = ({dispatch}) => dispatch('CLOSE_LOGIN_MODAL')
+export const authenticateUser   = ({dispatch}) => dispatch('AUTHENTICATE_USER')
 export const logout             = ({dispatch}) => dispatch('DEAUTHENTICATE_USER')
 export const setCurrentTag      = ({dispatch}, tagName) => dispatch('SET_CURRENT_TAG', tagName)
 export const setAppAsReady      = ({dispatch}) => dispatch('SET_APP_AS_READY')
@@ -39,7 +40,6 @@ export const setAppAsReady      = ({dispatch}) => dispatch('SET_APP_AS_READY')
 export const getAppInitialData = ({dispatch}) => {
     currentUserApi.getCurrentUser({
         success: ({data}) => {
-            dispatch('AUTHENTICATE_USER')
             dispatch('SET_USER_DATA', data)
             dispatch('SET_APP_AS_READY')
         },
