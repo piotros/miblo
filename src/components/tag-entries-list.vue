@@ -26,14 +26,14 @@
     import Loader             from 'components/loader.vue'
     import EntriesList        from 'components/entries-list.vue'
     import {
-        setCurrentTag,
-        fetchCurrentTagEntries
+            setCurrentTag,
+            fetchCurrentTagEntries
     } from 'vuex/actions'
 
     export default {
         vuex: {
             getters: {
-                entries: store => store.tags.currentTag.entries,
+                entries       : store => store.tags.currentTag.entries,
                 currentTagName: store => store.tags.currentTag.name
             },
             actions: {

@@ -1,8 +1,8 @@
 const state = {
-    popular: null,
-    newest: null,
+    popular   : null,
+    newest    : null,
     currentTag: {
-        name: null,
+        name   : null,
         entries: null
     }
 }
@@ -10,7 +10,7 @@ const state = {
 const mutations = {
     RECEIVE_TAGS_LIST (state, tagsList) {
         state.popular = tagsList.popular
-        state.newest = tagsList.newest
+        state.newest  = tagsList.newest
     },
 
     SET_CURRENT_TAG (state, tagName) {

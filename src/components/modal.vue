@@ -13,7 +13,9 @@
                         Default modal body
                     </slot>
                 </div>
+                <!--@formatter:off-->
                 <div class="modal-footer"><slot name="footer"></slot></div>
+                <!--@formatter:on-->
             </div>
         </div>
     </div>

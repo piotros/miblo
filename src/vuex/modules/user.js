@@ -1,13 +1,13 @@
 const state = {
     isAuthenticated: false,
-    profile: {
-        nickname       : 'jannowak',
-        entriesCount   : 3,
-        followers      : 2,
-        following      : 1,
-        name           : 'Jan',
-        surname        : 'Nowak',
-        avatar         : 'link'
+    profile        : {
+        nickname    : 'jannowak',
+        entriesCount: 3,
+        followers   : 2,
+        following   : 1,
+        name        : 'Jan',
+        surname     : 'Nowak',
+        avatar      : 'link'
     }
 }
 

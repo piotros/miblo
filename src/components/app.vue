@@ -36,11 +36,10 @@
     import LoginModal       from 'components/login-modal.vue'
     import FooterView       from 'components/footer.vue'
     import {
-        openEntryAddModal,
-        closeEntryAddModal,
-        setAppAsReady,
-        authenticateUser,
-        getAppInitialData
+            openEntryAddModal,
+            closeEntryAddModal,
+            setAppAsReady,
+            getAppInitialData
     } from 'vuex/actions'
 
     export default {
@@ -55,7 +54,6 @@
                 openEntryAddModal,
                 closeEntryAddModal,
                 setAppAsReady,
-                authenticateUser,
                 getAppInitialData
             }
         },
@@ -82,10 +80,9 @@
         },
 
         ready() {
-            if(!localStorage.getItem('token')) {
+            if (!localStorage.getItem('token')) {
                 this.setAppAsReady()
             } else {
-                this.authenticateUser()
                 this.getAppInitialData()
             }
         }

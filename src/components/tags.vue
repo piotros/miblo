@@ -8,9 +8,8 @@
             </div>
 
             <div v-if="!$loadingRouteData">
-                <a
-                    v-for="tag in popularTags"
-                    v-link="{ name: 'tags', params: { tagname: tag } }">
+                <a v-for="tag in popularTags"
+                   v-link="{ name: 'tags', params: { tagname: tag } }">
                     {{tag}}
                 </a>
             </div>
@@ -23,9 +22,8 @@
             </div>
 
             <div v-if="!$loadingRouteData">
-                <a
-                    v-for="tag in newestTags"
-                    v-link="{ name: 'tags', params: { tagname: tag } }">
+                <a v-for="tag in newestTags"
+                   v-link="{ name: 'tags', params: { tagname: tag } }">
                     {{tag}}
                 </a>
             </div>
@@ -52,7 +50,7 @@
         vuex: {
             getters: {
                 popularTags: store => store.tags.popular,
-                newestTags: store => store.tags.newest
+                newestTags : store => store.tags.newest
             },
 
             actions: {

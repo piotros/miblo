@@ -6,9 +6,7 @@ const state = {
     name        : 'Selected',
     surname     : 'User',
     entries     : {
-        all: [{
-            
-        }]
+        all: [{}]
     }
 }
 

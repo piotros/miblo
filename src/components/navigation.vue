@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li class="avatar">
-                <img v-bind:src="currentUser.avatar" alt="Avatar" />
+                <img :src="currentUser.avatar" alt="Avatar"/>
             </li>
             <li><a @click.prevent="openEntryAddModal()">Add entry</a></li>
             <li><a @click.prevent="logout()">Logout</a></li>
@@ -29,16 +29,16 @@
 
 <script type="text/babel">
     import {
-        openEntryAddModal,
-        openSignupModal,
-        openLoginModal,
-        logout
+            openEntryAddModal,
+            openSignupModal,
+            openLoginModal,
+            logout
     } from 'vuex/actions'
 
     export default {
         vuex: {
             getters: {
-                currentUser: store => store.user.profile,
+                currentUser    : store => store.user.profile,
                 isAuthenticated: store => store.user.isAuthenticated
             },
 

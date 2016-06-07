@@ -11,17 +11,17 @@ import store                   from 'vuex/store'
 const routes = {
     '/': {
         component: HomeScreen,
-        auth: false
+        auth     : false
     },
 
     '/login': {
         component: LoginWindow,
-        auth: false
+        auth     : false
     },
 
     '/signup': {
         component: SignupWindow,
-        auth: false
+        auth     : false
     },
 
     '/tags': {
@@ -44,7 +44,7 @@ const routes = {
 
     '/404': {
         component: NotFound,
-        auth: false
+        auth     : false
     }
 }
 

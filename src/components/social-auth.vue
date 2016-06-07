@@ -26,15 +26,15 @@
 
     .facebook-login-button {
         @include button(
-            $background: #4E69A2,
-            $background-hover: #3C5488
+                $background: #4E69A2,
+                $background-hover: #3C5488
         );
     }
 
     .google-login-button {
         @include button(
-            $background: #E0492F,
-            $background-hover: #CB432B
+                $background: #E0492F,
+                $background-hover: #CB432B
         )
     }
 
