@@ -18,7 +18,7 @@
                 <img :src="currentUser.avatar" alt="Avatar"/>
             </li>
             <li><a @click.prevent="openEntryAddModal()">Add entry</a></li>
-            <li><a @click.prevent="logout()">Logout</a></li>
+            <li><a @click.prevent="logoutUser()">Logout</a></li>
         </ul>
         <ul class="secondary-menu" v-if="!isAuthenticated">
             <li><a @click.prevent="openSignupModal()">Sign up</a></li>
@@ -47,6 +47,13 @@
                 openSignupModal,
                 openLoginModal,
                 logout
+            }
+        },
+
+        methods: {
+            logoutUser() {
+                this.logout()
+                this.$route.router.go('/')
             }
         }
     }
