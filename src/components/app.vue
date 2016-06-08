@@ -8,6 +8,7 @@
             <login-modal></login-modal>
             <router-view></router-view>
             <footer-view></footer-view>
+            <complete-profile-modal v-if="!isProfileCompleted"></complete-profile-modal>
         </div>
     </div>
 </template>
@@ -27,14 +28,15 @@
 </style>
 
 <script type="text/babel">
-    import store            from 'vuex/store'
-    import Mousetrap        from 'mousetrap'
-    import Loader           from 'components/loader.vue'
-    import Navigation       from 'components/navigation.vue'
-    import EntryAdd         from 'components/entry-add.vue'
-    import SignupModal      from 'components/signup-modal.vue'
-    import LoginModal       from 'components/login-modal.vue'
-    import FooterView       from 'components/footer.vue'
+    import store                    from 'vuex/store'
+    import Mousetrap                from 'mousetrap'
+    import Loader                   from 'components/loader.vue'
+    import Navigation               from 'components/navigation.vue'
+    import EntryAdd                 from 'components/entry-add.vue'
+    import SignupModal              from 'components/signup-modal.vue'
+    import LoginModal               from 'components/login-modal.vue'
+    import FooterView               from 'components/footer.vue'
+    import CompleteProfileModal     from 'components/complete-profile-modal.vue'
     import {
             openEntryAddModal,
             closeEntryAddModal,
@@ -48,7 +50,12 @@
 
         vuex: {
             getters: {
-                isAppReady: store => store.app.isAppReady
+                isAppReady        : store => store.app.isAppReady,
+                isProfileCompleted: store => {
+                    return store.user.profile.name &&
+                            store.user.profile.surname &&
+                            store.user.profile.nickname
+                }
             },
 
             actions: {
@@ -66,7 +73,8 @@
             SignupModal,
             LoginModal,
             Loader,
-            FooterView
+            FooterView,
+            CompleteProfileModal
         },
 
         created() {
