@@ -14,8 +14,6 @@ export const fetchEntries = ({dispatch}, callback) => {
 }
 
 export const addEntry = ({dispatch, state}, entry) => {
-    entry.authorNickname = state.user.nickname //Move it to backend. Nickname should be taken from auth user data
-
     entriesApi.addEntry({
         entry,
         success: ({data}) => dispatch('ADD_ENTRY', data),

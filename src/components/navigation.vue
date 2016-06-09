@@ -14,7 +14,7 @@
             <template v-if="isAuthenticated">
                 <li>
                     <a v-link="{ name: 'user', params: { nickname: currentUser.nickname } }">
-                        {{currentUser.name}} {{currentUser.surname}}
+                        {{currentUser.first_name}} {{currentUser.last_name}}
                     </a>
                 </li>
                 <li class="avatar">

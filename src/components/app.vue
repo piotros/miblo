@@ -8,7 +8,7 @@
             <login-modal></login-modal>
             <router-view></router-view>
             <footer-view></footer-view>
-            <complete-profile-modal v-if="!isProfileCompleted"></complete-profile-modal>
+            <!--<complete-profile-modal v-if="!isProfileCompleted"></complete-profile-modal>-->
         </div>
     </div>
 </template>
@@ -51,11 +51,7 @@
         vuex: {
             getters: {
                 isAppReady        : store => store.app.isAppReady,
-                isProfileCompleted: store => {
-                    return store.user.profile.name &&
-                            store.user.profile.surname &&
-                            store.user.profile.nickname
-                }
+                isProfileCompleted: store => store.user.profile.isProfileCompleted
             },
 
             actions: {

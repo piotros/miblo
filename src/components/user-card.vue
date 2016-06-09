@@ -18,7 +18,7 @@
             </div>
         </section>
         <a v-link="{ name: 'user', params: { nickname: user.nickname } }" class="personal-info">
-            <div>{{user.name}} {{user.surname}}</div>
+            <div>{{user.first_name}} {{user.last_name}}</div>
             <div>@{{user.nickname}}</div>
         </a>
     </section>
