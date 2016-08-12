@@ -22,7 +22,7 @@
     @include foundation-typography-base;
 
     .layout {
-        width: rem-calc(1200);
+        max-width: rem-calc(1200);
         margin: 0 auto;
     }
 </style>
